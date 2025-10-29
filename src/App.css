@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input,button{
+  cursor: pointer;
+}
+.errormsg{
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+}
+.hoverInpBottom{
+    width: 0px;
+    height: 2px;
+transition: 1s;
+    position: absolute;
+    bottom: 0;
+}
+input:hover ~.hoverInpBottom{
+width: 100%;
+background-color: blue;
+}
+select:hover~.hoverInpBottom{
+width: 100%;
+background-color: blue;
+}
+input:focus,button:focus,select:focus{
+  outline: 1px solid blue;
+  outline-offset: 3px;
+}

@@ -1,0 +1,203 @@
+.navaAuthenticate{
+    height: 80px;
+    /* border-bottom: 1px solid; */
+    /* padding: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:0 20px;
+    box-shadow: 5px 0px 10px gray;
+}
+.img-logo{
+    width: 50px;
+}
+.toggle-btn {
+  height: 50px;
+  background-color: whitesmoke;
+  width: 150px;
+  display: flex;
+  position: relative;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 10px gray;
+  
+}
+
+.toggle-btn div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  cursor: pointer;
+  z-index: 2;
+  /* background-color: red; */
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(8, 147, 202, 0.359);
+  height: 35px;
+ width: 50%;;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+.adminLoginForm{
+    padding: 20px;
+    width: 400px;
+    display: flex;
+     row-gap: 12px;
+     flex-direction: column;
+     box-shadow: 2px 2px 10px gray;
+     animation:showLogForm 1s linear;
+    
+}
+.adminFormRowCon{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: relative;
+}
+.adminTxtBox{
+    border: none;
+    padding: 10px;
+    outline: none;
+    background: #eee;
+    color: #555
+}
+
+.activePage{
+    font-weight: 600;
+    color:navy;
+}
+@keyframes showLogForm{
+    from{transform: translateX(100%);opacity: 0;}
+    to{transform: translateX(0);opacity: 1;}
+}
+.adminPageLogoImg{
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    /* top: -50%; */
+    transform: translate(-50%,-80%);
+  
+}
+
+.fpasslink,.lblRemeberMe{
+    color: rgb(10, 162, 223);
+    cursor: pointer;
+}
+.fpasslink:hover{
+    color: rgb(9, 113, 148);
+}
+.authPageAftersec{
+    height: 10%;
+   
+}
+.rememberforgetsec{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:400px){
+.adminLoginForm{
+    width: 90%;
+}
+}
+@media (max-width:330px){
+.rememberforgetsec{
+    flex-direction: column;
+}
+.adminPageLogoImg{
+    width: 70px;
+}
+}
+.authPageAftersec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.social-logos{
+    width: 50px;
+    cursor: pointer;
+}
+.copyrightscls{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+/* .adminSignUp{
+    padding: 20px;
+    width: 400px;
+    display: flex;
+     row-gap: 12px;
+     flex-direction: column;
+     box-shadow: 2px 2px 10px gray;
+     animation:showSignupForm 1s linear;
+} */
+@keyframes showSignupForm{
+     from{transform: translateX(-100%);opacity: 0;}
+    to{transform: translateX(0);opacity: 1;}
+}
+.adminSignForm{
+    padding: 20px;
+    width: 600px;
+    display: flex;
+     row-gap: 12px;
+     flex-wrap:wrap ;
+     box-shadow: 2px 2px 10px gray;
+     animation:showSignupForm 1s linear;
+
+  justify-content:space-between;
+}
+
+.signFormRowCon{
+     display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: relative;
+    width: 40%;
+}
+@media(max-width:615px){
+    .signFormRowCon{
+ 
+    width: 100%;
+}
+.adminSignForm{
+    width: 90%;
+    flex-direction: column;
+}
+}
+
+/* .toggle-btn{
+    height: 50px;
+    background-color:whitesmoke;
+    width: 130px;
+    display: flex;
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: inset 2px 2px 10px gray;
+}
+.toggle-btn div{
+    width: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: navy;
+    cursor: pointer;
+   
+}
+.toggle-btn::after{
+    content: " ";
+    position: absolute;
+    background-color: rgba(238, 9, 9, 0.462);
+    height: 35px;
+    display: block;
+    width: 55px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+} */
