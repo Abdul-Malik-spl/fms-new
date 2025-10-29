@@ -1,6 +1,7 @@
 import React,{useState,useRef,useEffect} from 'react'
 import './LoginSignup.css'
 import { InputNlabel } from '../InputNlabel/InputNlabel'
+import adminFormLogo from '../image/adminformlogo.png'
 
 export const Signup = () => {
    let inpRefs=useRef([])
@@ -141,6 +142,7 @@ export const Signup = () => {
   return (
   <div className='d-flex align-items-center justify-content-center h-75 ' style={{overflow:"hidden"}}>
     <form className='border adminSignForm'>
+              <img src={adminFormLogo} className='adminPageLogoImg signimg'/>
       {formData.map((obj,index)=><InputNlabel key={obj.inpId} {...obj}
       onRef={el=>inpRefs.current[index]=el} onKeyDown={(e)=>handleKeyDown(e,index)}/>)}
       <div className='roleSelectSec signFormRowCon'>

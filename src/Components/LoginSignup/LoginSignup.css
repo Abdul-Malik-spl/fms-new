@@ -169,6 +169,9 @@
     width: 90%;
     flex-direction: column;
 }
+.signimg{
+    display: none;
+}
 }
 
 /* .toggle-btn{
