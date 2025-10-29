@@ -100,7 +100,6 @@ export const Signup = () => {
               function inpValueGet(e){
                 setUserData({...userData,[e.target.name]:e.target.value,errors:{...userData.errors,[e.target.name]:false}})
                 
-                
               }
                
 
