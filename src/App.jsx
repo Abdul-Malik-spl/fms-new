@@ -9,6 +9,7 @@ function App() {
   <div>
     <BrowserRouter>
     <Routes>
+      <Route path='/admin' element={<Authenticate  adminLog={true}/>}/>
       <Route path='/' element={<Authenticate/>}/>
     </Routes>
     </BrowserRouter>

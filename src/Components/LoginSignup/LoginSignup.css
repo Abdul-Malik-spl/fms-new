@@ -1,7 +1,5 @@
 .navaAuthenticate{
     height: 80px;
-    /* border-bottom: 1px solid; */
-    /* padding: 20px; */
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -20,9 +18,7 @@
   padding: 10px;
   border-radius: 20px;
   box-shadow: inset 2px 2px 10px gray;
-  
 }
-
 .toggle-btn div {
   width: 50%;
   display: flex;
@@ -31,9 +27,7 @@
   color: black;
   cursor: pointer;
   z-index: 2;
-  /* background-color: red; */
 }
-
 .toggle-indicator {
   position: absolute;
   top: 50%;
@@ -52,8 +46,7 @@
      row-gap: 12px;
      flex-direction: column;
      box-shadow: 2px 2px 10px gray;
-     animation:showLogForm 1s linear;
-    
+     animation:showLogForm 1s linear;  
 }
 .adminFormRowCon{
     display: flex;
@@ -68,7 +61,6 @@
     background: #eee;
     color: #555
 }
-
 .activePage{
     font-weight: 600;
     color:navy;
@@ -83,9 +75,7 @@
     left: 50%;
     /* top: -50%; */
     transform: translate(-50%,-80%);
-  
 }
-
 .fpasslink,.lblRemeberMe{
     color: rgb(10, 162, 223);
     cursor: pointer;
@@ -95,7 +85,6 @@
 }
 .authPageAftersec{
     height: 10%;
-   
 }
 .rememberforgetsec{
     display: flex;
@@ -149,10 +138,8 @@
      flex-wrap:wrap ;
      box-shadow: 2px 2px 10px gray;
      animation:showSignupForm 1s linear;
-
   justify-content:space-between;
 }
-
 .signFormRowCon{
      display: flex;
     flex-direction: column;
@@ -162,7 +149,6 @@
 }
 @media(max-width:615px){
     .signFormRowCon{
- 
     width: 100%;
 }
 .adminSignForm{
