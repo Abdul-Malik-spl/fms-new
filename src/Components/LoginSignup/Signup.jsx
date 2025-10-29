@@ -22,7 +22,7 @@ export const Signup = () => {
   let formData=[{rowCon:classes.rowcon,
                   lblCls:classes.lblcls,
                   inpId:"userName",
-                  lblName:"Admin Name*",
+                  lblName:"User Name*",
                   placeholder:"Enter User Name",
                   inpType:"text",
                   inpCls:classes.inpcls,
