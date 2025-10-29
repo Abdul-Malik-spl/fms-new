@@ -6,7 +6,7 @@ import logo from '../image/fmslogo.png';
 import googlelogo from '../image/googlelogo.png'
 import instalogo from '../image/insta.jpg'
 export const Authenticate = () => {
-  const [activeTab, setActiveTab] = useState('login');
+  const [activeTab, setActiveTab] = useState('signup');
 
   const handleLoginClick = useCallback(() => {
     setActiveTab('login');

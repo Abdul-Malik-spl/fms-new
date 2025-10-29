@@ -11,6 +11,10 @@ input,button{
   position: absolute;
   bottom: -20px;
   left: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  /* background-color: red; */
+
 }
 .hoverInpBottom{
     width: 0px;

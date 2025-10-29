@@ -87,7 +87,9 @@ export const Signup = () => {
                   inpValue:userData.userConfirmPass,
                   inpValGetFun:inpValueGet,
                   errorShow:userData.errors.userConfirmPass,
-                  errMsg:"Please Enter confirm Password",
+                  // errMsg:"Please Enter confirm Password",
+                  errMsg:!userData.userConfirmPass? "Enter confirm Password": userData.userPass && userData.userConfirmPass && userData.userPass !== userData.userConfirmPass? "Passwords do not match": "",
+
                   errorSpanCls:classes.errCls},
               ]
               useEffect(()=>{
@@ -126,10 +128,14 @@ export const Signup = () => {
                    userConfirmPass:!userData.userConfirmPass,                    
                   selectRole:!userData.selectRole          
                 }
-                if(!userData.userName||!userData.userPass||!userData.userMail||!userData.userPhone||!userData.userConfirmPass||!userData.selectRole){
-                  setUserData({...userData,errors})
-                  return
-                }
+                 const passwordsMatch = userData.userPass === userData.userConfirmPass
+               if (!passwordsMatch) {
+                       errors.userConfirmPass = true
+                       }
+                 if (Object.values(errors).includes(true)) {
+               setUserData({...userData, errors})
+               return
+                      }
                 alert(userData.selectRole)
                 
               }
@@ -158,7 +164,7 @@ export const Signup = () => {
                      {userData.errors.selectRole?<span className='errormsg'>please select role</span>:""}
 
       </div>
-      <div className='w-100'>
+      <div className='w-100 mt-4'>
         <button className='btn btn-primary w-100' onClick={dataSubmit}>Sign Up</button>
       </div>
     </form>

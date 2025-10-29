@@ -145,7 +145,7 @@
     padding: 20px;
     width: 600px;
     display: flex;
-     row-gap: 12px;
+     row-gap: 15px;
      flex-wrap:wrap ;
      box-shadow: 2px 2px 10px gray;
      animation:showSignupForm 1s linear;
@@ -156,7 +156,7 @@
 .signFormRowCon{
      display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 25px;
     position: relative;
     width: 40%;
 }
