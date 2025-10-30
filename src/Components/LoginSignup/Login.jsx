@@ -2,8 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import "./LoginSignup.css";
 import { InputNlabel } from "../InputNlabel/InputNlabel";
 import adminFormLogo from "../image/adminformlogo.png";
+import { ForgetPassword } from "./ForgetPassword";
+import CleaningLoader from "../LoadingPage";
 export const Login = ({adminLog}) => {
+  let [loading, setLoading] = useState(false);
   let inpRefs = useRef([]);
+  let [forgetPasswordOtpBox,setForgetPasswordOtpBox]=useState(false);
   let [userData, setUserData] = useState({
     adminName: "",
     adminPass: "",
@@ -22,14 +26,14 @@ export const Login = ({adminLog}) => {
       lblCls: classes.lblcls,
       inpId: "adminName",
       lblName: `${adminLog?"Admin":"User"} Name/Mail*`,
-      placeholder: "Enter User Name",
+      placeholder: `Enter ${adminLog ? "Admin" : "User"} Name/Mail`,
       inpType: "text",
       inpCls: classes.inpcls,
       inpName: "adminName",
       inpValue: userData.adminName,
       inpValGetFun: inpValueGet,
       errorShow: userData.errors.adminName,
-      errMsg: "Please Enter Admin Name",
+      errMsg: `Please Enter ${adminLog ? "Admin" : "User"} Name/Mail`,
       errorSpanCls: classes.errCls,
     },
     {
@@ -37,14 +41,14 @@ export const Login = ({adminLog}) => {
       lblCls: classes.lblcls,
       inpId: "adminPass",
       lblName: "Password*",
-      placeholder: "Enter Password",
+      placeholder: `Enter ${adminLog ? "Admin" : "User"} Password`,
       inpType: "password",
       inpCls: classes.inpcls,
       inpName: "adminPass",
       inpValue: userData.adminPass,
       inpValGetFun: inpValueGet,
       errorShow: userData.errors.adminPass,
-      errMsg: "Please Enter Admin Password",
+      errMsg: `Please Enter ${adminLog ? "Admin" : "User"} Password`,
       errorSpanCls: classes.errCls,
     },
   ];
@@ -84,7 +88,15 @@ export const Login = ({adminLog}) => {
       setUserData({ ...userData, errors });
       return;
     }
-    alert(userData);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      alert(`${adminLog?"Admin":"User"} Logged In Successfully`);
+    }, 3000);
+    // alert(userData);
+  }
+  function closeOtpBox(){
+    setForgetPasswordOtpBox(false);
   }
   console.log(rememberMe);
 
@@ -93,6 +105,8 @@ export const Login = ({adminLog}) => {
       className="d-flex align-items-center justify-content-center h-75 "
       style={{ overflow: "hidden" }}
     >
+      {loading ? <CleaningLoader /> : ""}
+     {forgetPasswordOtpBox?<ForgetPassword closeOtpBox={closeOtpBox}/>:""} 
       <form className="border adminLoginForm">
         <img src={adminFormLogo} className="adminPageLogoImg" />
         {formData.map((obj, index) => (
@@ -114,7 +128,7 @@ export const Login = ({adminLog}) => {
               Remember Me
             </label>
           </span>
-          <span className="fpasslink">Forget Password?</span>
+          <span className="fpasslink" onClick={() => setForgetPasswordOtpBox(true)}>Forget Password?</span>
         </div>
         <div className={classes.rowcon}>
           <button onClick={AdminLogin} className="btn btn-primary">

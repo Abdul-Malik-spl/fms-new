@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import "./LoginSignup.css";
 import { InputNlabel } from "../InputNlabel/InputNlabel";
 import adminFormLogo from "../image/adminformlogo.png";
-
+import CleaningLoader from "../LoadingPage";
 export const Signup = () => {
+  let [loading, setLoading] = useState(false);
   let inpRefs = useRef([]);
   let selectRef = useRef(null);
   let [userData, setUserData] = useState({
@@ -45,6 +46,7 @@ export const Signup = () => {
       errMsg: "Please Enter User Name",
       errorSpanCls: classes.errCls,
     },
+    
     {
       rowCon: classes.rowcon,
       lblCls: classes.lblcls,
@@ -160,7 +162,12 @@ export const Signup = () => {
       setUserData({ ...userData, errors });
       return;
     }
-    alert(userData.selectRole);
+    // alert(userData.selectRole);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      alert("User Signed Up Successfully");
+    }, 3000);
   }
   function handleSelectKeyDown(e) {
     if (e.key === "Enter") {
@@ -173,6 +180,7 @@ export const Signup = () => {
       className="d-flex align-items-center justify-content-center h-75 "
       style={{ overflow: "hidden" }}
     >
+      {loading ? <CleaningLoader /> : ""}
       <form className="border adminSignForm">
         <img src={adminFormLogo} className="adminPageLogoImg signimg" />
         {formData.map((obj, index) => (
