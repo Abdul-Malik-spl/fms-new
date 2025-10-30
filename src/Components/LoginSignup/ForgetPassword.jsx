@@ -2,7 +2,7 @@ import React, { useRef,useState } from 'react';
 import "./forgetPassword.css";
 import { MdCancel } from 'react-icons/md';
 import CleaningLoader from '../LoadingPage';
-export const ForgetPassword = ({ closeOtpBox }) => {
+export const ForgetPassword = ({ closeOtpBox, userMail}) => {
   const inputsRef = useRef([]);
   const [loading, setLoading] = useState(false);
 
@@ -13,6 +13,10 @@ export const ForgetPassword = ({ closeOtpBox }) => {
     }
   };
 function otpSubmit(){
+    if(inputsRef.current.some(input => input.value === '')) {
+      alert('Please enter all OTP digits');
+      return;
+    }
    setLoading(true);
    setTimeout(() => {
      setLoading(false);
@@ -25,7 +29,7 @@ function otpSubmit(){
       <div className='cardFp'>
         <span className='cancelBtnSec'><MdCancel color='red' size={30} className='cbtn' onClick={()=>closeOtpBox()}/></span>
         <h6 style={{ textAlign: "center",color:"gray", }}>We send OTP to your email</h6>
-        <div style={{ textAlign: "center",color:"gray", }}>malik.vinsup@gmail.com</div>
+        <div style={{ textAlign: "center",color:"gray", }}>{userMail}</div>
         <div className='txtBoxSecFp'>
           {[...Array(6)].map((_, i) => (
             <input

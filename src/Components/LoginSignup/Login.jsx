@@ -98,6 +98,18 @@ export const Login = ({adminLog}) => {
   function closeOtpBox(){
     setForgetPasswordOtpBox(false);
   }
+  function ForgetPasswordFun(){
+    if(userData.adminName){
+      if(userData.adminName.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)){
+    setForgetPasswordOtpBox(true);
+  }
+    else{
+      alert("Please enter correct email address to proceed");
+    }
+  }else{
+    alert("Please enter your registered email to proceed");
+  }
+}
   console.log(rememberMe);
 
   return (
@@ -106,7 +118,7 @@ export const Login = ({adminLog}) => {
       style={{ overflow: "hidden" }}
     >
       {loading ? <CleaningLoader /> : ""}
-     {forgetPasswordOtpBox?<ForgetPassword closeOtpBox={closeOtpBox}/>:""} 
+     {forgetPasswordOtpBox?<ForgetPassword closeOtpBox={closeOtpBox} userMail={userData.adminName}/>:""} 
       <form className="border adminLoginForm">
         <img src={adminFormLogo} className="adminPageLogoImg" />
         {formData.map((obj, index) => (
@@ -128,7 +140,7 @@ export const Login = ({adminLog}) => {
               Remember Me
             </label>
           </span>
-          <span className="fpasslink" onClick={() => setForgetPasswordOtpBox(true)}>Forget Password?</span>
+          <span className="fpasslink" onClick={() =>ForgetPasswordFun()}>Forget Password?</span>
         </div>
         <div className={classes.rowcon}>
           <button onClick={AdminLogin} className="btn btn-primary">
