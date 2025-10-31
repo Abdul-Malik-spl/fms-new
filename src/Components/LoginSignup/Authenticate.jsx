@@ -42,7 +42,7 @@ export const Authenticate = ({adminLog}) => {
         </div>)}
        
       </nav>
-     <div style={{height:"80vh"}}> {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}</div>
+    {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}
       <div className="authPageAftersec">
         <div className="social-handles">
           {/* <h1>Social Handles</h1> */}

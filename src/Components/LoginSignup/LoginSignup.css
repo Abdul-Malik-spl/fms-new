@@ -111,12 +111,8 @@
     flex-direction: column;
 }
 @media (max-width:616px){
-/* .auth-page{
-    background-color: red;
-} */
-
-.signsmall{
-    height: 100vh;
+.signpagesmallclass{
+    height: 90vh;
 }
 }
 .social-logos{
