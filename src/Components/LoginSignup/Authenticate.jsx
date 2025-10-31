@@ -42,7 +42,7 @@ export const Authenticate = ({adminLog}) => {
         </div>)}
        
       </nav>
-     <div className={activeTab === "login" ?"signsmall":""}> {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}</div>
+     <div> {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}</div>
       <div className="authPageAftersec">
         <div className="social-handles">
           {/* <h1>Social Handles</h1> */}
