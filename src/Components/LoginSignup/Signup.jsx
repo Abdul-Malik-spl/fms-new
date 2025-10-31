@@ -177,8 +177,8 @@ export const Signup = () => {
   }
   return (
     <div
-      className="d-flex align-items-center justify-content-center h-75  signpagesmallclass "
-      style={{ overflow: "hidden", }}
+      className="d-flex align-items-center justify-content-center h-75 "
+      style={{ overflow: "hidden" }}
     >
       {loading ? <CleaningLoader /> : ""}
       <form className="border adminSignForm">

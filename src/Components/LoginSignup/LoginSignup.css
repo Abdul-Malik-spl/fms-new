@@ -103,17 +103,11 @@
     width: 70px;
 }
 }
-
 .authPageAftersec{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-@media (max-width:616px){
-.signpagesmallclass{
-    height: 90vh;
-}
 }
 .social-logos{
     width: 50px;

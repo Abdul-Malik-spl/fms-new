@@ -17,7 +17,7 @@ export const Authenticate = ({adminLog}) => {
   }, []);
 
   return (
-    <div style={{ height: "100vh", width: "100vw", overflowX: "hidden" }} className="auth-page">
+    <div style={{ height: "100vh", width: "100vw", overflowX: "hidden" }}>
       <nav className="navaAuthenticate">
         <img src={logo} className="img-logo" />
         {adminLog&&( <div className="toggle-btn">
@@ -42,7 +42,7 @@ export const Authenticate = ({adminLog}) => {
         </div>)}
        
       </nav>
-    {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}
+      {activeTab === "login" ? <Login adminLog={adminLog} /> : <Signup />}
       <div className="authPageAftersec">
         <div className="social-handles">
           {/* <h1>Social Handles</h1> */}
