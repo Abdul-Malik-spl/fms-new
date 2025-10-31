@@ -177,7 +177,7 @@ export const Signup = () => {
   }
   return (
     <div
-      className="d-flex align-items-center justify-content-center h-75 "
+      className="d-flex align-items-center justify-content-center h-75 md-my-5 my-0 "
       style={{ overflow: "hidden" }}
     >
       {loading ? <CleaningLoader /> : ""}

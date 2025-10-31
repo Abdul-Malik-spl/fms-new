@@ -103,14 +103,7 @@
     width: 70px;
 }
 }
-@media (max-width:350px){
-.auth-page{
-    height: 700px;
-}
-.authPageAftersec{
-    height: 200px;
-}
-}
+
 .authPageAftersec{
     display: flex;
     align-items: center;
