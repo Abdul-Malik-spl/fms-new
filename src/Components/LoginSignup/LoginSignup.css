@@ -110,6 +110,16 @@
     justify-content: center;
     flex-direction: column;
 }
+@media (max-width:616px){
+/* .auth-page{
+    background-color: red;
+} */
+.authPageAftersec{
+height: 50px;
+background-color: white;
+margin-top: 100px;
+}
+}
 .social-logos{
     width: 50px;
     cursor: pointer;
