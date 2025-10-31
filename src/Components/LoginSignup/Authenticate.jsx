@@ -17,7 +17,7 @@ export const Authenticate = ({adminLog}) => {
   }, []);
 
   return (
-    <div style={{ height: "100vh", width: "100vw", overflowX: "hidden" }}>
+    <div style={{ height: "100vh", width: "100vw", overflowX: "hidden" }} className="auth-page">
       <nav className="navaAuthenticate">
         <img src={logo} className="img-logo" />
         {adminLog&&( <div className="toggle-btn">
